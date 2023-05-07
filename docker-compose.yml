@@ -1,0 +1,21 @@
+version: '3.1'
+ 
+services:
+ 
+  yourls:
+    image: yourls
+    restart: always
+    ports:
+      - 8087:80
+    environment:
+      YOURLS_DB_PASS: winter11
+      YOURLS_SITE: https://yourls.dmw.zone
+      YOURLS_USER: abraxas678
+      YOURLS_PASS: winter11
+ 
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: winter11
+      MYSQL_DATABASE: yourls
